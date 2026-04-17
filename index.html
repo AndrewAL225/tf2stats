@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TF2 Community Stats</title>
+    <link rel="icon" type="image/webp" href="img/titans/NorthstarIcon.webp">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="scanlines"></div>
+<nav class="navbar">
+    <div class="nav-left">
+        <div class="nav-logo"><span class="logo-bracket">[</span>TF2<span class="logo-accent">STATS</span><span class="logo-bracket">]</span></div>
+        <div class="lang-switcher">
+            <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">RU</button>
+            <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        </div>
+        <button class="nav-btn-special contact-btn" onclick="openContact()" data-i18n="nav_contact">СВЯЗАТЬСЯ</button>
+    </div>
+    <div class="nav-links">
+        <a href="index.html" class="nav-link active" data-i18n="nav_home">ГЛАВНАЯ</a>
+        <a href="tactics.html" class="nav-link " data-i18n="nav_tactics">ТАКТИКИ</a>
+        <a href="titans.html" class="nav-link " data-i18n="nav_titans">ТИТАНЫ</a>
+        <a href="players.html" class="nav-link " data-i18n="nav_players">ИГРОКИ</a>
+        <a href="maps.html" class="nav-link " data-i18n="nav_maps">КАРТЫ</a>
+    </div>
+    <div class="nav-burger" onclick="toggleMenu()">☰</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link" data-i18n="nav_home">ГЛАВНАЯ</a>
+    <a href="tactics.html" class="nav-link" data-i18n="nav_tactics">ТАКТИКИ</a>
+    <a href="titans.html" class="nav-link" data-i18n="nav_titans">ТИТАНЫ</a>
+    <a href="players.html" class="nav-link" data-i18n="nav_players">ИГРОКИ</a>
+    <a href="maps.html" class="nav-link" data-i18n="nav_maps">КАРТЫ</a>
+</div>
+<main>
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-label" data-i18n="hero_label">NORTHSTAR COMMUNITY PROJECT</div>
+            <h1 class="hero-title">TITANFALL 2<br><span class="hero-accent">COMMUNITY STATS</span></h1>
+            <p class="hero-desc" data-i18n="hero_desc">Добровольная статистика сообщества.</p>
+            <div class="hero-stats">
+                <div class="hstat"><div class="hstat-value" id="totalMatches">—</div><div class="hstat-label" data-i18n="hero_matches">МАТЧЕЙ</div></div>
+                <div class="hstat-divider"></div>
+                <div class="hstat"><div class="hstat-value" id="totalPlayers">—</div><div class="hstat-label" data-i18n="hero_pilots">ПИЛОТОВ</div></div>
+            </div>
+            <a href="https://github.com" class="btn-primary" target="_blank" data-i18n="hero_dl">СКАЧАТЬ МОД</a>
+            <a href="https://www.donationalerts.com/r/andrewal_225" class="btn-secondary donate-btn" target="_blank" data-i18n="nav_donate">ДОНАТ</a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-text" data-i18n="footer_copy">TF2 Community Stats · Northstar Project · Не аффилировано с EA / Respawn</div>
+    <div class="footer-creator">MOD CREATOR: AndrewAL<br><a href="https://www.tiktok.com/@andrewal225" target="_blank" class="footer-link">TikTok: @andrewal225</a></div>
+</footer>
+
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeContact()">&times;</span>
+        <h2 class="modal-title" data-i18n="modal_contact_title">СВЯЗАТЬСЯ</h2>
+        <div class="contact-info">
+            <p data-i18n="modal_contact_desc">Если у вас есть вопросы или предложения по работе мода:</p>
+            <div class="email-box" onclick="copyEmail()">
+                <span id="contactEmail">andrewal225@gmail.com</span>
+                <span class="copy-hint" data-i18n="modal_copy_hint">Кликните, чтобы скопировать</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
