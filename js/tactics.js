@@ -57,19 +57,7 @@ function selectTactic(key) {
 }
 
 async function loadWeapons() {
-    const wrap = document.getElementById("weaponsWrap");
-    try {
-        const data = await apiFetch("/api/stats/weapons");
-        if (!data.length) { setEmpty(wrap); return; }
-        wrap.innerHTML = `<table class="data-table">
-            <thead><tr><th>
-            <tbody>${data.map((d,i) => `<tr>
-                <td class="rank">${i+1}</td>
-                <td class="name-cell">${weaponDisplayName(d.weapon)}</td>
-                <td class="accent-val">${fmt(d.total)}</td>
-            </tr>`).join("")}</tbody>
-        </table>`;
-    } catch(e) { setError(wrap, e.message); }
+    return;
 }
 
 async function loadTactics() {
@@ -82,4 +70,4 @@ async function loadTactics() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => { loadTactics(); loadWeapons(); });
+document.addEventListener("DOMContentLoaded", () => { loadTactics(); });

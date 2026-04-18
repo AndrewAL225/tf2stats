@@ -123,12 +123,14 @@ function applyLang() {
         if (el.tagName === "INPUT") el.placeholder = t(key);
         else el.innerHTML = t(key);
     });
+    document.documentElement.lang = currentLang;
     document.querySelectorAll(".lang-btn").forEach(btn => {
         btn.classList.toggle("active", btn.getAttribute("data-lang") === currentLang);
     });
 }
 
-document.addEventListener("DOMContentLoaded", applyLang);
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", applyLang);
+else applyLang();
 
 TRANSLATIONS.en.avg_speed_mph = "AVG SPEED MPH";
 TRANSLATIONS.en.avg_speed_kmh = "AVG SPEED KM/H";
